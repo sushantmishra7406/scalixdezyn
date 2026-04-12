@@ -1,0 +1,199 @@
+/* ================= PORTFOLIO ================= */
+.portfolio{
+  position:relative;
+  padding:120px 20px;
+  text-align:center;
+  z-index:1;
+}
+
+/* BACKGROUND GLOW */
+.portfolio::before{
+  content:"";
+  position:absolute;
+  top:20%;
+  right:10%;
+  width:400px;
+  height:400px;
+
+  background:radial-gradient(circle, rgba(255,59,48,0.08), transparent 70%);
+  filter:blur(100px);
+  z-index:0;
+}
+
+/* ================= LABEL ================= */
+.portfolio-label{
+  display:inline-block;
+  padding:6px 16px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:30px;
+
+  font-size:11px;
+  letter-spacing:2px;
+  color:#aaa;
+
+  margin-bottom:20px;
+
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(6px);
+}
+
+/* ================= HEADER ================= */
+.portfolio-header{
+  max-width:700px;
+  margin:0 auto 60px;
+}
+
+.portfolio h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  letter-spacing:1px;
+  margin-bottom:10px;
+  line-height:1.2;
+}
+
+.portfolio-subtext{
+  color:#aaa;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ================= GRID ================= */
+.portfolio-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+  gap:30px;
+
+  max-width:1200px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+/* ================= CARD ================= */
+.portfolio-card{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(10px);
+
+  text-align:left;
+
+  transition:all .4s ease;
+  cursor:pointer;
+}
+
+/* ================= IMAGE ================= */
+.portfolio-image{
+  height:200px;
+  width:100%;
+
+  background:linear-gradient(135deg, #111, #1a1a1a);
+  border-bottom:1px solid rgba(255,255,255,.05);
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* IMAGE ZOOM EFFECT */
+.portfolio-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(135deg, #111, #1a1a1a);
+  transition:transform .6s ease;
+}
+
+/* GLOW OVERLAY */
+.portfolio-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:radial-gradient(circle at center, rgba(255,59,48,.2), transparent 70%);
+  opacity:0;
+  transition:.4s;
+}
+
+/* ================= CONTENT ================= */
+.portfolio-content{
+  padding:25px;
+  transform:translateY(0);
+  transition:.4s ease;
+}
+
+.portfolio-content h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.portfolio-content p{
+  font-size:14px;
+  color:#aaa;
+  line-height:1.6;
+  margin-bottom:15px;
+}
+
+/* TAG */
+.portfolio-tag{
+  font-size:12px;
+  color:#ff3b30;
+  letter-spacing:.5px;
+}
+
+/* ================= HOVER ================= */
+.portfolio-card:hover{
+  transform:translateY(-12px) scale(1.02);
+  border-color:#ff3b30;
+
+  box-shadow:
+    0 20px 50px rgba(255,59,48,.15),
+    0 0 60px rgba(255,59,48,.08);
+}
+
+/* IMAGE ZOOM */
+.portfolio-card:hover .portfolio-image::before{
+  transform:scale(1.1);
+}
+
+/* GLOW */
+.portfolio-card:hover .portfolio-image::after{
+  opacity:1;
+}
+
+/* CONTENT LIFT */
+.portfolio-card:hover .portfolio-content{
+  transform:translateY(-5px);
+}
+
+/* ================= REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .portfolio{
+    padding:100px 20px;
+  }
+
+  .portfolio h2{
+    font-size:36px;
+  }
+
+  .portfolio-image{
+    height:180px;
+  }
+}

@@ -1,0 +1,124 @@
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:140px 20px 100px;
+  overflow:hidden;
+}
+
+/* MULTI LAYER GLOW */
+.hero::before,
+.hero::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  z-index:0;
+}
+
+/* LEFT GLOW */
+.hero::before{
+  width:400px;
+  height:400px;
+  background:#ff3b30;
+  opacity:.08;
+
+  top:20%;
+  left:10%;
+}
+
+/* RIGHT GLOW */
+.hero::after{
+  width:350px;
+  height:350px;
+  background:#ff3b30;
+  opacity:.06;
+
+  bottom:20%;
+  right:10%;
+}
+
+/* CONTENT */
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:750px;
+}
+
+/* LABEL */
+.hero-label{
+  display:inline-block;
+  padding:6px 16px;
+  border-radius:30px;
+
+  font-size:12px;
+  letter-spacing:1px;
+
+  color:#aaa;
+  border:1px solid rgba(255,255,255,.15);
+
+  margin-bottom:18px;
+
+  background:rgba(255,255,255,.02);
+}
+
+/* HEADING */
+.hero-content h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:72px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+/* SUBTEXT */
+.hero-subtext{
+  color:#aaa;
+  font-size:18px;
+  line-height:1.6;
+  max-width:520px;
+  margin:0 auto 35px;
+}
+
+/* BUTTONS */
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+/* TRUST LINE */
+.hero-trust{
+  margin-top:25px;
+  font-size:13px;
+  color:#888;
+  letter-spacing:.3px;
+}
+
+/* BUTTON STYLES KEEP SAME */
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .hero{
+    padding:120px 20px 80px;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .hero-subtext{
+    font-size:16px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+}

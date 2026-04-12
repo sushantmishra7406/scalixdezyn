@@ -1,0 +1,276 @@
+/* ================= PRICING ================= */
+.pricing{
+  position:relative;
+  padding:130px 20px;
+  text-align:center;
+  z-index:1;
+}
+
+/* BACKGROUND GLOW */
+.pricing::before{
+  content:"";
+  position:absolute;
+  bottom:20%;
+  left:10%;
+  width:400px;
+  height:400px;
+
+  background:radial-gradient(circle, rgba(255,59,48,0.08), transparent 70%);
+  filter:blur(100px);
+  z-index:0;
+}
+
+/* ================= LABEL ================= */
+.pricing-label{
+  display:inline-block;
+  padding:6px 16px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:30px;
+
+  font-size:11px;
+  letter-spacing:2px;
+  color:#aaa;
+
+  margin-bottom:20px;
+
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(6px);
+}
+
+/* ================= HEADER ================= */
+.pricing-header{
+  max-width:700px;
+  margin:0 auto 60px;
+}
+
+.pricing h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  letter-spacing:1px;
+  margin-bottom:10px;
+  line-height:1.2;
+}
+
+.pricing-subtext{
+  color:#aaa;
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* ================= GRID ================= */
+.pricing-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:30px;
+
+  max-width:1000px;
+  margin:0 auto;
+
+  align-items:stretch; /* 🔥 FIX */
+  position:relative;
+  z-index:2;
+}
+
+/* ================= CARD ================= */
+.pricing-card{
+  position:relative;
+  padding:40px 28px;
+  border-radius:22px;
+
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+
+  text-align:left;
+
+  transition:all .35s ease;
+  cursor:pointer;
+
+  overflow:visible; /* ✅ FIX */
+}
+
+
+/* INNER GLOW */
+.pricing-card::before{
+  content:"";
+  position:absolute;
+  inset:-20%; /* 🔥 expand beyond card */
+  mix-blend-mode:screen;
+  background:radial-gradient(
+    circle at top left,
+    rgba(255,59,48,0.12),
+    transparent 80%
+  );
+
+  filter:blur(40px); /* 🔥 smooth edges */
+
+  opacity:0;
+  transition:.4s ease;
+}
+
+/* TITLE */
+.pricing-card h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+/* PRICE */
+.price{
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:25px;
+  color:#ff3b30;
+}
+
+.price span{
+  font-size:14px;
+  color:#aaa;
+  margin-left:5px;
+}
+
+/* FEATURES */
+.features{
+  list-style:none;
+  padding:0;
+  margin-bottom:30px;
+}
+
+.features li{
+  font-size:14px;
+  color:#aaa;
+  margin-bottom:12px;
+  position:relative;
+  padding-left:20px;
+}
+
+.features li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#ff3b30;
+  font-size:12px;
+}
+
+/* BUTTON ALIGN */
+.pricing-card .btn{
+  margin-top:auto;
+  position:relative;
+  z-index:3;
+  pointer-events:auto;
+}
+
+/* ================= HOVER ================= */
+.pricing-card:hover{
+  transform:translateY(-10px);
+  border-color:#ff3b30;
+
+  box-shadow:
+    0 20px 50px rgba(255,59,48,.15),
+    0 0 40px rgba(255,59,48,.08);
+}
+
+.pricing-card:hover::before{
+   opacity:0.6; /* instead of 1 */
+}
+
+/* ================= HIGHLIGHT ================= */
+.pricing-card.highlight{
+  border-color:#ff3b30;
+
+  /* ❌ NO SCALE (fixes layout) */
+  transform:none;
+
+  box-shadow:
+    0 25px 60px rgba(255,59,48,.2);
+}
+
+/* EXTRA BORDER GLOW */
+.pricing-card.highlight::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+
+  border-radius:22px;
+  border:1px solid rgba(255,59,48,0.4);
+
+  pointer-events:none;
+}
+
+/* ================= BADGE (REFINED ORIGINAL STYLE) ================= */
+.badge{
+  position:absolute;
+  top:-50px;
+  left:150px;
+
+  background:linear-gradient(135deg,#ff3b30,#a30000);
+  color:#fff;
+
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+
+  padding:7px 16px;
+  border-radius:30px;
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:
+    0 10px 25px rgba(255,59,48,.25),
+    0 0 10px rgba(255,59,48,.2);
+
+  z-index:5;
+
+  transition:.3s ease;
+}
+
+/* HOVER ENHANCEMENT */
+.pricing-card:hover .badge{
+  transform:translateY(-2px);
+  box-shadow:
+    0 15px 30px rgba(255,59,48,.35),
+    0 0 15px rgba(255,59,48,.25);
+}
+
+/* ensure links remain clickable above visual overlays */
+.pricing-card > *{
+  position:relative;
+  z-index:2;
+}
+
+.pricing-card::before{
+  pointer-events:none;
+  z-index:1;
+}
+
+.pricing-card.highlight::after{
+  z-index:1;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .pricing{
+    padding:110px 20px;
+  }
+
+  .pricing h2{
+    font-size:36px;
+  }
+
+  .pricing-card{
+    padding:28px 22px;
+  }
+
+  .price{
+    font-size:28px;
+  }
+
+  .badge{
+    top:1px;
+    right:10px;
+    transform:translateX(0);
+    font-size:10px;
+    padding:7px 12px;
+  }
+}

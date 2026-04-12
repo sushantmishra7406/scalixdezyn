@@ -1,0 +1,130 @@
+/* ================= ABOUT ================= */
+.about{
+  position:relative;
+  padding:140px 20px 120px;
+  text-align:center;
+
+  margin-top:-60px;
+  border-radius:40px 40px 0 0;
+}
+
+
+/* TAG LINE */
+.about-tag{
+  font-size:14px;
+  color:#888;
+  letter-spacing:1px;
+  margin-bottom:15px;
+}
+
+/* HEADING */
+.about-quote{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:54px;
+  line-height:1.2;
+  margin-bottom:25px;
+  letter-spacing:1px;
+}
+
+/* HIGHLIGHT */
+.highlight{
+  color:#ff3b30;
+}
+
+/* SUBTEXT */
+.about-subtext{
+  font-size:17px;
+  color:#aaa;
+  line-height:1.7;
+  max-width:700px;
+  margin:0 auto 20px;
+}
+
+/* ================= STATS ================= */
+.about-stats{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin-top:40px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding-top:30px;
+}
+
+/* INDIVIDUAL STAT */
+.stat{
+  text-align:center;
+  min-width:120px;
+}
+
+/* NUMBER */
+.stat h3{
+  font-size:38px;
+  font-weight:600;
+  color:#ff3b30;
+  margin-bottom:6px;
+}
+
+/* LABEL */
+.stat p{
+  font-size:13px;
+  color:#aaa;
+  letter-spacing:.5px;
+}
+
+/* BUTTON SPACING */
+.about .btn{
+  margin-top:10px;
+}
+
+/* ================= AMBIENT GLOW ================= */
+.about::before{
+  content:"";
+  position:absolute;
+  top:-30%;
+  left:-20%;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle, rgba(255,59,48,0.08), transparent 70%);
+  filter:blur(80px);
+  z-index:0;
+}
+
+.about::after{
+  content:"";
+  position:absolute;
+  bottom:-20%;
+  right:-10%;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle, rgba(255,59,48,0.05), transparent 70%);
+  filter:blur(80px);
+  z-index:0;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .about{
+    padding:110px 20px 90px;
+    margin-top:-40px;
+  }
+
+  .about-quote{
+    font-size:36px;
+  }
+
+  .about-subtext{
+    font-size:15px;
+  }
+
+  .about-stats{
+    gap:30px;
+  }
+
+  .stat h3{
+    font-size:28px;
+  }
+}

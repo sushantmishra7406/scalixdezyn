@@ -1,0 +1,222 @@
+/* ================= NAVBAR ================= */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+
+  padding:18px 60px;
+
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+
+  z-index:1000;
+  transition:all .35s ease;
+}
+
+/* ================= SCROLLED ================= */
+.navbar.scrolled{
+  padding:12px 60px;
+
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ================= LOGO ================= */
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;
+  color:#fff;
+  letter-spacing:1px;
+
+  transition:.3s;
+}
+
+.logo:hover{
+  color:#ff3b30;
+}
+
+/* ================= NAV LINKS ================= */
+.nav-center{
+  display:flex;
+  justify-content:center;
+  gap:34px;
+}
+
+.nav-center a{
+  position:relative;
+
+  font-size:14px;
+  color:#ddd;
+
+  transition:.3s;
+}
+
+/* UNDERLINE EFFECT */
+.nav-center a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+
+  width:0;
+  height:2px;
+
+  background:linear-gradient(90deg,#ff3b30,transparent);
+  transition:.3s;
+}
+
+/* HOVER */
+.nav-center a:hover{
+  color:#fff;
+  text-shadow:0 0 8px rgba(255,59,48,0.4);
+}
+
+.nav-center a:hover::after{
+  width:100%;
+}
+
+/* ================= RIGHT SIDE ================= */
+.nav-right{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:15px;
+}
+
+/* ================= CTA BUTTON ================= */
+.nav-btn{
+  padding:10px 22px;
+  border-radius:30px;
+
+  background:linear-gradient(145deg,#ff3b30,#a30000);
+  color:#fff;
+
+  position:relative;
+  overflow:hidden;
+
+  transition:.3s ease;
+}
+
+/* GLOW BACK */
+.nav-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:radial-gradient(circle, rgba(255,59,48,0.4), transparent 70%);
+  opacity:0;
+  transition:.4s;
+}
+
+/* SHINE EFFECT */
+.nav-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-75%;
+  width:50%;
+  height:100%;
+
+  background:rgba(255,255,255,.25);
+  transform:skewX(-25deg);
+  transition:.5s;
+}
+
+.nav-btn:hover::before{
+  left:125%;
+}
+
+.nav-btn:hover{
+  transform:translateY(-2px);
+}
+
+.nav-btn:hover::after{
+  opacity:.3;
+}
+
+/* ================= MENU TOGGLE ================= */
+.menu-toggle{
+  display:none;
+  cursor:pointer;
+  z-index:1200;
+}
+
+/* HAMBURGER LINES */
+.menu-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#fff;
+  margin:5px 0;
+  transition:.3s;
+}
+
+.menu-toggle:hover span{
+  background:#ff3b30;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+  .navbar{
+    padding:14px 20px;
+    grid-template-columns:1fr auto;
+  }
+
+  .navbar.scrolled{
+    padding:10px 20px;
+  }
+
+  .nav-center{
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+
+    padding:30px 0;
+
+    background:rgba(0,0,0,0.96);
+    backdrop-filter:blur(16px);
+
+    border-top:1px solid rgba(255,255,255,0.06);
+
+    transform:translateY(-20px);
+    opacity:0;
+    pointer-events:none;
+
+    transition:.35s ease;
+  }
+
+  .nav-center.active{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+
+  .nav-center a{
+    font-size:15px;
+  }
+
+  .nav-btn{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}

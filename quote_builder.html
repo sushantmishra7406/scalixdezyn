@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/quote_builder.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <title>Custom Quote Builder</title>
+</head>
+<body>
+
+  <div class="bg-glow">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <header class="navbar">
+    <div class="logo"><a href="index.html#home" class="logo">Scalix Dezyn</a></div>
+
+    <nav class="nav-center">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#pricing">Pricing</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#quote-form" class="nav-btn">Get Quote</a>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="quote-hero">
+    <div class="quote-hero-content">
+      <p class="section-label reveal">CUSTOM QUOTE</p>
+      <h1 class="reveal">
+        Build your service mix and <span class="highlight">see the bundle value</span>
+      </h1>
+      <p class="quote-hero-text reveal delay-1">
+        Choose one service or combine multiple. The quote builder estimates your package,
+        applies bundle discounts, and prepares a prefilled email request you can send instantly.
+      </p>
+    </div>
+  </section>
+
+  <section class="quote-builder" id="quote-form">
+    <div class="quote-shell">
+      <div class="quote-services">
+        <div class="quote-services-header">
+          <p class="services-label reveal">SELECT SERVICES</p>
+          <h2 class="reveal">Choose what you need now</h2>
+          <p class="reveal delay-1">
+            Pick one service or create a bundled package. Two services get 5% off,
+            three get 10% off, and all four get 15% off.
+          </p>
+        </div>
+
+        <div class="quote-grid" data-quote-grid>
+          <label class="quote-card reveal" data-service-id="social-media-strategy">
+            <input type="checkbox" name="services" value="social-media-strategy">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">01</span>
+              <span class="quote-card-price">₹35,000 starting</span>
+            </div>
+            <h3>Social Media Strategy</h3>
+            <p>Platform strategy, content pillars, audience direction, and growth planning.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-social-media-strategy" data-plan>
+                <option value="Starter Strategy">Starter Strategy</option>
+                <option value="Growth Strategy" selected>Growth Strategy</option>
+                <option value="Scale Strategy">Scale Strategy</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="content-creation">
+            <input type="checkbox" name="services" value="content-creation">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">02</span>
+              <span class="quote-card-price">₹25,000 starting</span>
+            </div>
+            <h3>Content Creation</h3>
+            <p>Static posts, carousels, creative direction, and monthly content support.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-content-creation" data-plan>
+                <option value="Starter Content">Starter Content</option>
+                <option value="Growth Content" selected>Growth Content</option>
+                <option value="Premium Content">Premium Content</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="brand-identity">
+            <input type="checkbox" name="services" value="brand-identity">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">03</span>
+              <span class="quote-card-price">₹65,000 starting</span>
+            </div>
+            <h3>Brand Identity</h3>
+            <p>Logo direction, visual identity system, and brand usage guidance.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-brand-identity" data-plan>
+                <option value="Starter Identity">Starter Identity</option>
+                <option value="Growth Identity" selected>Growth Identity</option>
+                <option value="Full Brand System">Full Brand System</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="performance-marketing">
+            <input type="checkbox" name="services" value="performance-marketing">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">04</span>
+              <span class="quote-card-price">₹35,000 starting</span>
+            </div>
+            <h3>Performance Marketing</h3>
+            <p>Campaign setup, optimization, testing, and reporting guidance. Ad spend separate.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-performance-marketing" data-plan>
+                <option value="Starter Performance">Starter Performance</option>
+                <option value="Growth Performance" selected>Growth Performance</option>
+                <option value="Scale Performance">Scale Performance</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="website-landing-pages">
+            <input type="checkbox" name="services" value="website-landing-pages">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">05</span>
+              <span class="quote-card-price">₹40,000 starting</span>
+            </div>
+            <h3>Website &amp; Landing Pages</h3>
+            <p>Conversion-focused pages, clearer offers, and stronger CTA flow.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-website-landing-pages" data-plan>
+                <option value="Starter Landing Page">Starter Landing Page</option>
+                <option value="Growth Web Package" selected>Growth Web Package</option>
+                <option value="Custom Conversion Build">Custom Conversion Build</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="funnels-optimization">
+            <input type="checkbox" name="services" value="funnels-optimization">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">06</span>
+              <span class="quote-card-price">₹38,000 starting</span>
+            </div>
+            <h3>Funnels &amp; Optimization</h3>
+            <p>Better user journeys, improved conversion flow, and reduced drop-off.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-funnels-optimization" data-plan>
+                <option value="Starter Funnel Review">Starter Funnel Review</option>
+                <option value="Growth Funnel System" selected>Growth Funnel System</option>
+                <option value="Advanced Funnel Build">Advanced Funnel Build</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="seo-organic-growth">
+            <input type="checkbox" name="services" value="seo-organic-growth">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">07</span>
+              <span class="quote-card-price">₹30,000 starting</span>
+            </div>
+            <h3>SEO &amp; Organic Growth</h3>
+            <p>Organic visibility, search-focused content direction, and SEO growth support.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-seo-organic-growth" data-plan>
+                <option value="Starter SEO">Starter SEO</option>
+                <option value="Growth SEO" selected>Growth SEO</option>
+                <option value="Scale Organic">Scale Organic</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="analytics-strategy">
+            <input type="checkbox" name="services" value="analytics-strategy">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">08</span>
+              <span class="quote-card-price">₹25,000 starting</span>
+            </div>
+            <h3>Analytics &amp; Strategy</h3>
+            <p>Reporting interpretation, strategic insight, and smarter decision support.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-analytics-strategy" data-plan>
+                <option value="Starter Insights">Starter Insights</option>
+                <option value="Growth Strategy" selected>Growth Strategy</option>
+                <option value="Advanced Advisory">Advanced Advisory</option>
+              </select>
+            </label>
+          </label>
+
+          <label class="quote-card reveal" data-service-id="social-media-ads">
+            <input type="checkbox" name="services" value="social-media-ads">
+            <div class="quote-card-top">
+              <span class="quote-card-badge">09</span>
+              <span class="quote-card-price">₹30,000 starting</span>
+            </div>
+            <h3>Social Media Ads</h3>
+            <p>Social ad management, targeting refinement, and campaign testing support.</p>
+            <label class="quote-card-plan">
+              Plan
+              <select name="plan-social-media-ads" data-plan>
+                <option value="Starter Ads">Starter Ads</option>
+                <option value="Growth Ads" selected>Growth Ads</option>
+                <option value="Scale Ads">Scale Ads</option>
+              </select>
+            </label>
+          </label>
+        </div>
+      </div>
+
+      <aside class="quote-summary">
+        <p class="services-label reveal">ESTIMATE</p>
+        <h2 class="reveal">Your quote summary</h2>
+        <p class="reveal delay-1">
+          This is an estimated starting quote. Final pricing can change depending on scope,
+          turnaround, ad spend, and deliverables.
+        </p>
+
+        <div class="quote-selected" data-selected-services></div>
+
+        <div class="quote-summary-row">
+          <span>Subtotal</span>
+          <strong data-subtotal>₹0</strong>
+        </div>
+
+        <div class="quote-summary-row">
+          <span data-discount-label>Bundle Discount</span>
+          <strong class="quote-discount" data-discount>- ₹0</strong>
+        </div>
+
+        <div class="quote-summary-row quote-total">
+          <span>Estimated Total</span>
+          <strong data-total>₹0</strong>
+        </div>
+
+        <form class="quote-form reveal delay-2">
+          <input type="hidden" name="selected_services" value="">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="brand" placeholder="Business / Brand">
+          <textarea name="notes" rows="5" placeholder="Tell us about your goals, timeline, or anything specific you want included..."></textarea>
+          <div class="quote-help" data-service-warning></div>
+          <button type="submit" class="btn primary">Get Quote on Email</button>
+          <p class="quote-help">
+            Clicking this opens your default email app with the selected services and estimate prefilled.
+            It does not auto-send without your confirmation.
+          </p>
+        </form>
+
+        <p class="quote-note">
+          Performance Marketing estimates exclude ad spend. Final bundled quotes may improve further for long-term retainers.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-cta">
+      <h2>Ready to grow your brand?</h2>
+      <a href="#quote-form" class="btn primary">Build Your Quote</a>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Scalix Dezyn</h3>
+        <p>
+          We build scalable digital systems that turn attention into measurable growth.
+        </p>
+
+        <div class="footer-social">
+          <a href="#">Web</a>
+          <a href="#">IG</a>
+          <a href="#">LI</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Work</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="#quote-form">Quote Builder</a>
+      </div>
+
+      <div class="footer-services">
+        <h4>Services</h4>
+        <p>Social Media</p>
+        <p>Content Creation</p>
+        <p>Brand Strategy</p>
+        <p>Performance Marketing</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>hello@scalixdezyn.com</p>
+        <p>+91 98765 43210</p>
+        <p>India</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Scalix Dezyn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script defer src="script.js"></script>
+  <script defer src="quote_builder.js"></script>
+</body>
+</html>
+

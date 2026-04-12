@@ -1,0 +1,17 @@
+.seo-growth{position:relative;padding:120px 20px 130px;}
+.seo-shell{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;}
+.seo-panel,.seo-grid{border:1px solid rgba(255,255,255,0.08);border-radius:30px;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));box-shadow:0 24px 56px rgba(0,0,0,0.22);}
+.seo-panel{padding:30px;}
+.seo-panel h2{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1.05;letter-spacing:1px;margin-bottom:14px;}
+.seo-panel p{color:#aaa;line-height:1.8;}
+.seo-points{display:grid;gap:14px;margin-top:28px;}
+.seo-point{padding:18px 20px;border-radius:20px;background:rgba(0,0,0,0.18);border:1px solid rgba(255,255,255,0.06);}
+.seo-point strong{display:block;margin-bottom:8px;font-size:17px;font-weight:500;}
+.seo-grid{padding:24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+.seo-card{padding:22px;border-radius:22px;background:rgba(0,0,0,0.18);border:1px solid rgba(255,255,255,0.07);transition:transform .35s ease,border-color .35s ease;}
+.seo-card:hover{transform:translateY(-8px);border-color:rgba(255,59,48,0.28);}
+.seo-card span{display:inline-block;margin-bottom:12px;color:#ff978d;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;}
+.seo-card h3{margin-bottom:10px;font-size:22px;font-weight:500;}
+.seo-card p{color:#aaa;line-height:1.75;font-size:14px;}
+@media(max-width:960px){.seo-shell{grid-template-columns:1fr;}}
+@media(max-width:768px){.seo-growth{padding:100px 20px 110px;}.seo-panel,.seo-grid{padding:22px;}.seo-panel h2{font-size:40px;}.seo-grid{grid-template-columns:1fr;}}

@@ -1,0 +1,237 @@
+.strategy-showcase{
+  position:relative;
+  padding:120px 20px 130px;
+  overflow:hidden;
+}
+
+.strategy-showcase::before{
+  content:"";
+  position:absolute;
+  inset:auto auto 10% 5%;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,59,48,0.14), transparent 70%);
+  filter:blur(70px);
+  pointer-events:none;
+}
+
+.strategy-showcase::after{
+  content:"";
+  position:absolute;
+  inset:8% 6% auto auto;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,0.07), transparent 70%);
+  filter:blur(60px);
+  pointer-events:none;
+}
+
+.strategy-shell{
+  position:relative;
+  z-index:1;
+  max-width:1180px;
+  margin:0 auto;
+  padding:42px;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:34px;
+  background:linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  box-shadow:0 28px 70px rgba(0,0,0,0.28);
+  backdrop-filter:blur(12px);
+}
+
+.strategy-shell-header{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);
+  gap:30px;
+  align-items:end;
+  margin-bottom:52px;
+}
+
+.strategy-shell-label{
+  display:inline-block;
+  padding:6px 16px;
+  margin-bottom:18px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:30px;
+  background:rgba(255,255,255,0.02);
+  color:#aaa;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.strategy-shell-label::before{
+  content:none;
+}
+
+.strategy-shell h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:56px;
+  line-height:1.05;
+  letter-spacing:1px;
+}
+
+.strategy-shell p{
+  color:#aaa;
+  line-height:1.7;
+}
+
+.strategy-note{
+  padding:22px 24px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.025);
+}
+
+.strategy-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:22px;
+}
+
+.strategy-card{
+  position:relative;
+  min-height:250px;
+  padding:28px;
+  border-radius:26px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  transition:transform .45s ease, border-color .35s ease, box-shadow .45s ease;
+  animation:strategyFloat 6s ease-in-out infinite;
+}
+
+.strategy-card:nth-child(2){ animation-delay:.8s; }
+.strategy-card:nth-child(3){ animation-delay:1.6s; }
+.strategy-card:nth-child(4){ animation-delay:2.4s; }
+
+.strategy-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(255,59,48,0.18), transparent 45%, transparent);
+  opacity:.9;
+  pointer-events:none;
+}
+
+.strategy-card::after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:-60px;
+  bottom:-70px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,0.09), transparent 68%);
+  transition:transform .5s ease;
+  pointer-events:none;
+}
+
+.strategy-card:hover{
+  transform:translateY(-12px) rotate(-0.4deg);
+  border-color:rgba(255,59,48,0.45);
+  box-shadow:0 24px 50px rgba(0,0,0,0.26), 0 0 0 1px rgba(255,59,48,0.08) inset;
+}
+
+.strategy-card:hover::after{
+  transform:scale(1.15);
+}
+
+.strategy-card-top,
+.strategy-card h3,
+.strategy-card p,
+.strategy-points{
+  position:relative;
+  z-index:1;
+}
+
+.strategy-card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+.strategy-number{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:34px;
+  letter-spacing:1px;
+  color:#ff6d63;
+}
+
+.strategy-badge{
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.07);
+  color:#f3d4d1;
+  font-size:11px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.strategy-card h3{
+  margin-bottom:10px;
+  font-size:24px;
+  font-weight:500;
+}
+
+.strategy-card p{
+  margin-bottom:18px;
+  font-size:15px;
+}
+
+.strategy-points{
+  display:grid;
+  gap:10px;
+}
+
+.strategy-points span{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#f2f2f2;
+  font-size:14px;
+}
+
+.strategy-points span::before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ff3b30;
+  box-shadow:0 0 14px rgba(255,59,48,0.45);
+}
+
+@keyframes strategyFloat{
+  0%, 100%{ transform:translateY(0); }
+  50%{ transform:translateY(-7px); }
+}
+
+@media(max-width:900px){
+  .strategy-shell{
+    padding:28px;
+  }
+
+  .strategy-shell-header,
+  .strategy-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:768px){
+  .strategy-showcase{
+    padding:100px 20px 110px;
+  }
+
+  .strategy-shell h2{
+    font-size:38px;
+  }
+
+  .strategy-card{
+    min-height:auto;
+    padding:24px;
+  }
+}
