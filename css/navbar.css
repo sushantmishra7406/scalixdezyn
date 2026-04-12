@@ -250,21 +250,67 @@
   }
 }
 
+/* ================= FINAL MOBILE NAV FIX ================= */
 @media(max-width:768px){
 
   .navbar{
-    padding:14px 20px;
-
-    display:flex; /* 🔥 CHANGE FROM GRID */
+    display:flex !important;
     justify-content:space-between;
     align-items:center;
+
+    padding:14px 20px !important; /* balanced spacing */
   }
 
-  .navbar.scrolled{
-    padding:10px 20px;
+  /* LOGO */
+  .logo{
+    font-size:24px;
   }
 
-  /* HIDE NAV LINKS INITIALLY */
+  /* RIGHT SIDE */
+  .nav-right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:10px;
+    padding-right:6px; /* 🔥 pulls toggle inward */
+  }
+
+  /* HIDE CTA BUTTON */
+  .nav-btn{
+    display:none !important;
+  }
+
+  /* TOGGLE BUTTON */
+  .menu-toggle{
+    display:flex !important;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.05);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    cursor:pointer;
+    z-index:1200;
+  }
+
+  .menu-toggle span{
+    display:block;
+    width:20px;
+    height:2px;
+    background:#fff;
+    margin:3px 0;
+    transition:.3s;
+  }
+
+  /* DROPDOWN MENU */
   .nav-center{
     position:absolute;
     top:65px;
@@ -298,34 +344,4 @@
     pointer-events:auto;
   }
 
-  /* 🔥 HIDE BUTTON ON MOBILE */
-  .nav-btn{
-    display:none;
-  }
-
-  /* 🔥 FORCE TOGGLE VISIBLE */
-  .menu-toggle{
-    display:flex !important;
-    align-items:center;
-    justify-content:center;
-
-    width:42px;
-    height:42px;
-
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.15);
-
-    background:rgba(255,255,255,0.05);
-
-    cursor:pointer;
-    z-index:1200;
-  }
-
-  .menu-toggle span{
-    display:block;
-    width:22px;
-    height:2px;
-    background:#fff;
-    margin:4px 0;
-  }
 }
